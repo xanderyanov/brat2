@@ -196,19 +196,20 @@ section {
 }
 
 .firstScreen__info h1 {
-	color: var(--light);
+	color: #fff;
 	text-align: center;
 
 
 }
 
 .firstScreen__info span {
-	color: var(--light);
+	color: #fff;
 	text-align: center;
 	font-size: 36px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
+	margin-top: 20px;
 
 	.at-max(768px, {
 		font-size: 28px;
@@ -221,6 +222,11 @@ section {
 .at-max(480px, {
 	font-size: 22px;
 });
+}
+
+.firstScreen__info span:last-child {
+
+	color: var(--color2);
 }
 
 
