@@ -106,10 +106,10 @@ gulp.task('vendorsJs', function () {
 
 var myjsfiles = [
   'src/assets/js/var.js',
-  'src/assets/js/__sliders.js',
+  //'src/assets/js/__sliders.js',
   'src/assets/js/main.js',
   // 'src/assets/js/btl/start.js',
-  // 'src/assets/js/btl/resize.js',
+  'src/assets/js/resize.js',
 ];
 
 gulp.task('myJs', function () {

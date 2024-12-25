@@ -10,6 +10,8 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 //height: calc(var(--vh, 1vh) * 100); for 100vh
 
 function initVars() {
+  console.log('init');
+
   $window = $(window);
   windowWidth = $window.width();
   windowHeight = $window.height();
@@ -17,6 +19,8 @@ function initVars() {
 
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  console.log(vh);
 }
 
 $(function () {

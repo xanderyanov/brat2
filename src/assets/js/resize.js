@@ -1,19 +1,20 @@
 function siteResizeFunction() {
-  prevWindowWidth = windowWidth;
   initVars();
-  chapterOffset();
-  closeMenu();
 
-  if (prevWindowWidth <= 1280 && windowWidth > 1280) {
-    $('.fmenuBox__toggler').removeClass('open');
-    $('.fmenuBox__content').slideDown();
+  prevWindowWidth = windowWidth;
+  windowWidth = $window.width();
+
+  if (prevWindowWidth > 980 && windowWidth <= 980) {
+    
   }
-  if (prevWindowWidth > 1280 && windowWidth <= 1280) {
-    $('.fmenuBox__content').hide();
-    console.log('надо скрыть');
+  if (prevWindowWidth < 980 && windowWidth >= 980) {
+    
   }
 }
 
+console.log('resize-enable');
+
 $(function () {
-  $window.on('resize', siteResizeFunction);
+  $(window).on('resize', siteResizeFunction);
+  siteResizeFunction();
 });

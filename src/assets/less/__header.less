@@ -45,6 +45,10 @@
 .header__title {
   display: flex;
   flex-direction: column;
+
+  .at-max(920px, {
+    display: none;
+  });
 }
 
 .header__title span {
@@ -69,18 +73,7 @@
   flex-direction: column;
   align-items: flex-end;
 
-  .at-max(600px, {
-    order: 2;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding-top: 10px;
-  });
 
-.at-max(429px, {
-  flex-direction: column;
-});
 }
 
 .header__infoItem {

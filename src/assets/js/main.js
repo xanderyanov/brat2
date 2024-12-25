@@ -1,5 +1,7 @@
 $(function () {
 
+  initVars();
+
     // $(window).load(function () {
   //     $("#loader").delay(500).fadeOut(function () {
   //         //$('html').css({'-webkit-transform': 'translateZ(0)'});
