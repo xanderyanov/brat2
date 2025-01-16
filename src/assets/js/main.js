@@ -2,6 +2,8 @@ $(function () {
 
   initVars();
 
+  portfolioGallery();
+
     // $(window).load(function () {
   //     $("#loader").delay(500).fadeOut(function () {
   //         //$('html').css({'-webkit-transform': 'translateZ(0)'});
@@ -172,6 +174,37 @@ $(function () {
   //     }
   // });
 
+  $(document).on('scroll', function () {
+    /****************** блоки с картинками появляются - это фикс для safari */
+    $('.imgBlock__outer').each(function () {
+      var self = $(this);
+      var heightStart = self.offset().top;
+      var heightEnd = self.offset().top + self.outerHeight();
+      if (
+        $(document).scrollTop() + windowHeight >= heightStart &&
+        $(document).scrollTop() < heightEnd
+      ) {
+        self.addClass('visible');
+      } else {
+        self.removeClass('visible');
+      }
+    });
+
+    /*************** поведение fixed-шапки */
+    var header = $('.header__area');
+    if ($(this).scrollTop() > 0) {
+      header.addClass('header__area_fly');
+      // if (header.hasClass('mainHeader')) {
+      //   $('.header__area').removeClass('headerDark');
+      // }
+    } else {
+      $('.header__area').removeClass('header__area_fly');
+      // if (header.hasClass('mainHeader')) {
+      //   $('.header__area').addClass('headerDark');
+      // }
+    }
+  });
+
   $('a[data-fancybox]').fancybox({
     closeBtn: false,
     arrows: true,
@@ -190,6 +223,9 @@ $(function () {
       momentum: true, // Continue movement after releasing mouse/touch when panning
     },
   });
+
+
+  
 
   ///1/////////////С оверлеем//////////////
 

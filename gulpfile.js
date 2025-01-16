@@ -106,7 +106,7 @@ gulp.task('vendorsJs', function () {
 
 var myjsfiles = [
   'src/assets/js/var.js',
-  //'src/assets/js/__sliders.js',
+  'src/assets/js/__gallery.js',
   'src/assets/js/main.js',
   // 'src/assets/js/btl/start.js',
   'src/assets/js/resize.js',
@@ -139,11 +139,11 @@ gulp.task('fontawesome', function () {
     .pipe(gulp.dest('build/node_modules/font-awesome'));
 });
 
-// gulp.task('icomoon', function () {
-//   return gulp
-//     .src('src/assets/icomoon/**/*.*')
-//     .pipe(gulp.dest('build/assets/icomoon'));
-// });
+gulp.task('icomoon', function () {
+  return gulp
+    .src('src/assets/icomoon/**/*.*')
+    .pipe(gulp.dest('build/assets/icomoon'));
+});
 
 // gulp.task('video', function () {
 //   return gulp
@@ -167,8 +167,8 @@ gulp.task(
       'vendorsJs',
       'myJs',
       'fonts',
-      'fontawesome'
-      // 'icomoon',
+      'fontawesome',
+      'icomoon'
       // 'video'
     )
   )

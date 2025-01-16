@@ -6,6 +6,12 @@
   left: 0;
   top: 0;
   z-index: 1000;
+  transition: all .3s;
+}
+
+.header__area_fly {
+  background-color: #F6F5F3 !important;
+  border-top: 5px solid var(--color2);
 }
 
 .header {
@@ -51,8 +57,15 @@
   });
 }
 
+
+
 .header__title span {
   color: #fff;
+  transition: all .3s;
+}
+
+.header__area_fly .header__title span {
+  color: #111;
 }
 
 .header__title span:nth-child(2) {
@@ -104,4 +117,9 @@
   color: #fff;
   text-decoration: none;
   position: relative;
+  transition: all .3s;
+}
+
+.header__area_fly .header__infoItem a {
+  color: #111;
 }

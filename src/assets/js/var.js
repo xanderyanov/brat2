@@ -21,6 +21,8 @@ function initVars() {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 
   console.log(vh);
+
+  
 }
 
 $(function () {

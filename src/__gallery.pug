@@ -1,0 +1,21 @@
+mixin portfolioGal
+  .block
+      .w
+        .xTitle
+          h2 Галерея
+        .xSwiper__outer
+          .xSwiper.portfolioGallery
+            .swiper-container.portfolioGallery-container
+              .swiper-wrapper.portfolioGallery-wrapper
+                each item in gallery1
+                  .swiper-slide.portfolioGallery-slide
+                    a.portfolioGallery__item(href=item.img, data-fancybox='group', data-caption='')
+                      .portfolioGallery__itemImg(style='background-image: url(' + item.img + ');')
+                        //- a(href!= item.img, data-fancybox)
+                        //- img(src=item.img, alt=item.title)
+
+            .portfolioGallery__left.xSwiper__left
+              i.icon-arr-left1
+            .portfolioGallery__right.xSwiper__right
+              i.icon-arr-right1
+          .swiper-pagination.xSwiperPagination.portfolioGallery__pagination
