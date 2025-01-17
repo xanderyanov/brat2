@@ -91,6 +91,16 @@ $(function () {
     }, 1);
   });
 
+  //прокрутка вниз по стрелке на основном экране
+  $('.go_to1').on('click', function() {
+    var scroll_el = $('.go_adr1');
+    menuHeight = $('.site__header').height();
+    if ($(scroll_el).length != 0) {
+        $('html, body').animate({ scrollTop: $(scroll_el).offset().top - menuHeight}, 1000);
+    }
+    return false;
+});
+
   // $(window).load(function () {
   //     $("#loader").delay(500).fadeOut(function () {
   //         //$('html').css({'-webkit-transform': 'translateZ(0)'});
