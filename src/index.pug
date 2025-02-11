@@ -4,6 +4,7 @@
 
 include __const
 include __header
+include __about
 include __gallery
 
 
@@ -19,10 +20,10 @@ body
     .site__header
       .header__area
         +header
-
+        +topMenu
 
     .site__center
-      .firstScreen(style="background-image: url(/assets/img/bg1.jpg)") 
+      .firstScreen(style="background-image: url(assets/img/bg1.jpg)") 
         //- video.videoDt(preload='auto' autoplay='true' loop='loop' muted='muted' volume='0')
         //-   source(src='/assets/video/btli1.mp4' type='video/mp4')
         //-   source(src='/assets/video/btli1.webm' type='video/webm')
@@ -36,6 +37,8 @@ body
             span Официальное представительство в России
         .toBottom.go_to1
           i.icon-chevrons-down
+      .go_adr1
+      +about__inMain
       +portfolioGal
 
     .site__footer

@@ -2,7 +2,7 @@ mixin header
   header.header.w 
     .logo1
         a(href='/')
-          img(src="/assets/img/logo.svg", alt="")
+          img(src="assets/img/logo.svg", alt="")
     .header__title 
         span Предприятие по производству компрессоров природного газа:
         span «Chengdu Tianyi Energy Equipment Manufacturing Co.,Ltd»
@@ -14,5 +14,28 @@ mixin header
       .header__infoItem 
         i.fa.fa-envelope-o(aria-hidden='true')
         a(href='mailto:sales@tianyicngrus.com') sales@tianyicngrus.com
+    .header__menuBtn
+      span
+      span
+      span
+
+mixin topMenu 
+  .topMenu__outer.w 
+    ul.topMenu 
+      li
+        a(href="#") О компании
+      li
+        a(href="#") Галерея
+      li
+        a(href="#") Линейка оборудования
+      li
+        a(href="#") Проекты
+      li
+        a(href="#") Сервис
+      li
+        a(href="#") Запасный части
+      li
+        a(href="#") Контакты 
+
 
 

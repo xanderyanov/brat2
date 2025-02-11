@@ -94,7 +94,8 @@ $(function () {
   //прокрутка вниз по стрелке на основном экране
   $('.go_to1').on('click', function() {
     var scroll_el = $('.go_adr1');
-    menuHeight = $('.site__header').height();
+    menuHeight = $('.header__area').outerHeight();
+    console.log(menuHeight);
     if ($(scroll_el).length != 0) {
         $('html, body').animate({ scrollTop: $(scroll_el).offset().top - menuHeight}, 1000);
     }
@@ -136,53 +137,18 @@ $(function () {
   });
 
   // раскрытие меню по кнопке
-  $('.menuButton').click(function () {
+  $('.header__menuBtn').on('click', function (e) {
+    e.preventDefault();
     if ($(this).hasClass('open')) {
       $(this).removeClass('open');
-      $('.adaptiveMenu__area').slideUp();
-      $('.adaptiveMenu__area').removeClass('adaptiveMenu__area_open');
+      $('.topMenu__outer').slideUp(200);
+      $('body').removeClass('stop');
     } else {
       $(this).addClass('open');
-      $('.adaptiveMenu__area').slideDown();
-      $('.adaptiveMenu__area').addClass('adaptiveMenu__area_open');
+      $('.topMenu__outer').slideDown(200);
+      $('body').addClass('stop');
     }
   });
-  $('.adaptiveMenu li:has(ul) > a').addClass('hasInner');
-  // $('.adaptiveMenu li:has(ul)').addClass('has-sub');
-  // $('#cssmenu li:has(ul)').addClass('has-sub');
-  $('.adaptiveMenu li>a').on('click', function (e) {
-    if ($(this).parent().find('ul').length > 0) {
-      e.preventDefault();
-      var element = $(this).parent('li');
-      if (element.hasClass('open')) {
-        element.removeClass('open');
-        element.find('li').removeClass('open');
-        element.find('ul').slideUp();
-      } else {
-        element.addClass('open');
-        element.children('ul').slideDown();
-        element.siblings('li').children('ul').slideUp();
-        element.siblings('li').removeClass('open');
-        element.siblings('li').find('li').removeClass('open');
-        element.siblings('li').find('ul').slideUp();
-      }
-    }
-  });
-  $('.adaptiveMenu li.has-sub>a').append(
-    '<span class="holder"><i class="icon-caret-down"></i></span>'
-  );
-  // отслеживание поведения адаптивного меню при изменении размера экрана
-  // $(window).resize(function(){
-  //     if ($('.header__area').width() > 600) {
-  //         $('.topMenu__area').show();
-  //         $('.topMenu__area').removeClass('topMenu__area_open');
-  //     }
-  //     else {
-  //         $('.menuButton').removeClass('open');
-  //         $('.topMenu__area').hide();
-  //         $('.topMenu__area').removeClass('topMenu__area_open');
-  //     }
-  // });
 
   $(document).on('scroll', function () {
     /****************** блоки с картинками появляются - это фикс для safari */
@@ -203,15 +169,9 @@ $(function () {
     /*************** поведение fixed-шапки */
     var header = $('.header__area');
     if ($(this).scrollTop() > 0) {
-      header.addClass('header__area_fly');
-      // if (header.hasClass('mainHeader')) {
-      //   $('.header__area').removeClass('headerDark');
-      // }
+      //header.addClass('header__area_fly');
     } else {
-      $('.header__area').removeClass('header__area_fly');
-      // if (header.hasClass('mainHeader')) {
-      //   $('.header__area').addClass('headerDark');
-      // }
+      //$('.header__area').removeClass('header__area_fly');
     }
   });
 
