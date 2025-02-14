@@ -11,7 +11,7 @@ $(function () {
   //     $(".mask").delay(1000).fadeOut("slow");
   // });
 
-  $('.site__center').css({'padding-top': headerHeight});
+  //$('.site__center').css({'padding-top': headerHeight});
   
   $('.topMenu li:has(ul) > a').addClass('hasInner');
 
